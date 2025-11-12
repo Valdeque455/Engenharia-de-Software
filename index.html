@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Eventos Acadêmicos</title>
+  <link rel="stylesheet" href="estilos/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fas fa-graduation-cap"></i> Plataforma de Eventos Acadêmicos</h1>
+    <nav>
+      <button class="theme-toggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#eventos"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+        <li><a href="#destaques"><i class="fas fa-star"></i> Destaques</a></li>
+        <li><a href="#inscricao"><i class="fas fa-user-edit"></i> Inscrição</a></li>
+        <li><a href="#certificados"><i class="fas fa-certificate"></i> Certificados</a></li>
+        <li><a href="#calendario"><i class="fas fa-calendar"></i> Calendário</a></li>
+        <li><a href="#noticias"><i class="fas fa-newspaper"></i> Notícias</a></li>
+        <li class="auth-links">
+          <a href="login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+          <a href="cadastro.html" class="register-btn"><i class="fas fa-user-plus"></i> Cadastro</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+    <h2>Divulgue, gerencie e participe de eventos acadêmicos com facilidade.</h2>
+    <p>Uma solução completa para instituições de ensino e organizadores.</p>
+      <div class="hero-buttons">
+        <button class="cta-button primary" onclick="document.getElementById('inscricao').scrollIntoView({ behavior: 'smooth' })">
+      Comece Agora
+    </button>
+        <button class="cta-button secondary" onclick="document.getElementById('eventos').scrollIntoView({ behavior: 'smooth' })">
+          Ver Eventos
+        </button>
+      </div>
+    </div>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+      <div class="stat-item">
+        <i class="fas fa-users"></i>
+        <span class="stat-number">10k+</span>
+        <span class="stat-label">Participantes</span>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-calendar-check"></i>
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Eventos</span>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-university"></i>
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Instituições</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="destaques" class="section">
+    <h3><i class="fas fa-star"></i> Eventos em Destaque</h3>
+    <div class="featured-events">
+      <div class="featured-event-card" data-aos="fade-up">
+        <div class="event-badge">Em Breve</div>
+        <img src="assets/images/anais-de-eventos-930x534.png" alt="Congresso Internacional">
+        <div class="event-content">
+          <h4>Congresso Internacional de Tecnologia</h4>
+          <p class="event-date"><i class="fas fa-calendar"></i> 15-17 Junho 2024</p>
+          <p class="event-location"><i class="fas fa-map-marker-alt"></i> Universidade Eduardo Mondlane, Maputo</p>
+          <p class="event-description">O maior congresso de tecnologia de Moçambique com palestrantes internacionais.</p>
+          <div class="event-tags">
+            <span class="tag">Tecnologia</span>
+            <span class="tag">Inovação</span>
+            <span class="tag">Internacional</span>
+          </div>
+          <button class="event-button">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="featured-event-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-badge">Inscrições Abertas</div>
+        <img src="assets/images/eventoscientificos.png" alt="Workshop">
+        <div class="event-content">
+          <h4>Workshop de Pesquisa Científica</h4>
+          <p class="event-date"><i class="fas fa-calendar"></i> 20-22 Julho 2024</p>
+          <p class="event-location"><i class="fas fa-map-marker-alt"></i> Universidade Pedagógica, Beira</p>
+          <p class="event-description">Workshop prático sobre metodologia e publicação científica em Moçambique.</p>
+          <div class="event-tags">
+            <span class="tag">Pesquisa</span>
+            <span class="tag">Metodologia</span>
+            <span class="tag">Publicação</span>
+          </div>
+          <button class="event-button">Inscrever-se</button>
+        </div>
+      </div>
+      <div class="featured-event-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-badge">Vagas Limitadas</div>
+        <img src="assets/images/images.jpeg" alt="Simpósio">
+        <div class="event-content">
+          <h4>Simpósio de Inteligência Artificial</h4>
+          <p class="event-date"><i class="fas fa-calendar"></i> 10-12 Agosto 2024</p>
+          <p class="event-location"><i class="fas fa-map-marker-alt"></i> Universidade Lúrio, Nampula</p>
+          <p class="event-description">Discussões sobre IA, machine learning e suas aplicações em Moçambique.</p>
+          <div class="event-tags">
+            <span class="tag">IA</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Inovação</span>
+          </div>
+          <button class="event-button">Reservar Vaga</button>
+        </div>
+      </div>
+      <div class="featured-event-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-badge">Destaque</div>
+        <img src="assets/images/Promocao-de-eventos-930x534.png" alt="Promoção de Eventos">
+        <div class="event-content">
+          <h4>Promoção de Eventos Acadêmicos</h4>
+          <p class="event-date"><i class="fas fa-calendar"></i> 15-17 Junho 2024</p>
+          <p class="event-location"><i class="fas fa-map-marker-alt"></i> Universidade Zambeze, Tete</p>
+          <p class="event-description">Descubra os melhores eventos acadêmicos de Moçambique.</p>
+          <div class="event-tags">
+            <span class="tag">Eventos</span>
+            <span class="tag">Promoção</span>
+            <span class="tag">Inovação</span>
+          </div>
+          <button class="event-button">Ver Mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="categorias-eventos" class="section event-categories-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Categorias de Eventos</h2>
+        <p class="section-description">Descubra as diferentes experiências que você pode viver em nossa plataforma</p>
+      </div>
+      <div class="event-categories-grid">
+        <div class="event-category-card palestra">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Palestras</h3>
+          <p>Assista a especialistas compartilhando conhecimento, tendências e experiências em diversas áreas do saber.</p>
+          <a href="#eventos-palestra" class="category-link">Ver Palestras</a>
+        </div>
+        <div class="event-category-card workshop">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Workshops</h3>
+          <p>Participe de atividades práticas, desenvolva novas habilidades e aprenda com quem faz na prática.</p>
+          <a href="#eventos-workshop" class="category-link">Ver Workshops</a>
+        </div>
+        <div class="event-category-card competicao">
+          <i class="fas fa-trophy"></i>
+          <h3>Competições</h3>
+          <p>Desafie-se em competições acadêmicas, mostre seu talento e conquiste reconhecimento.</p>
+          <a href="#eventos-competicao" class="category-link">Ver Competições</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-section" id="eventos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <p class="section-description">Descubra e participe dos melhores eventos da área</p>
+        </div>
+
+        <div class="event-navigation">
+            <button class="event-filter active" data-filter="all">
+                <i class="fas fa-calendar-alt"></i>
+                Todos
+            </button>
+            <button class="event-filter" data-filter="workshop">
+                <i class="fas fa-laptop-code"></i>
+                Workshops
+            </button>
+            <button class="event-filter" data-filter="palestra">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Palestras
+            </button>
+            <button class="event-filter" data-filter="competicao">
+                <i class="fas fa-trophy"></i>
+                Competições
+            </button>
+        </div>
+
+        <div class="event-search">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="eventSearch" placeholder="Buscar eventos..." class="search-input">
+            </div>
+            <div class="event-sort">
+                <select id="eventSort" class="sort-select">
+                    <option value="date-asc">Data: Mais próximos</option>
+                    <option value="date-desc">Data: Mais distantes</option>
+                    <option value="name-asc">Nome: A-Z</option>
+                    <option value="name-desc">Nome: Z-A</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="eventos-palestra"></div>
+        <div id="eventos-workshop"></div>
+        <div id="eventos-competicao"></div>
+        <div class="event-grid" id="eventGrid">
+            <!-- Eventos serão carregados dinamicamente via JavaScript -->
+        </div>
+
+        <div class="event-load-more">
+            <button id="loadMoreEvents" class="load-more-button">
+                <span>Carregar Mais Eventos</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+  </section>
+
+  <!-- Modal de Detalhes do Evento -->
+  <div class="event-modal" id="eventModal">
+    <div class="modal-content">
+        <button class="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+            <div class="event-modal-image">
+                <img src="" alt="" id="modalEventImage">
+                <div class="event-modal-badge" id="modalEventBadge"></div>
+            </div>
+            <div class="event-modal-info">
+                <h3 id="modalEventTitle"></h3>
+                <div class="event-modal-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="modalEventDate"></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="modalEventTime"></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="modalEventLocation"></span>
+                    </div>
+                </div>
+                <div class="event-modal-description" id="modalEventDescription"></div>
+                <div class="event-modal-tags" id="modalEventTags"></div>
+                <div class="event-modal-speakers" id="modalEventSpeakers"></div>
+                <div class="event-modal-actions">
+                    <button class="event-button primary" id="modalEventRegister" onclick="handleEventRegistration()">
+                        Inscrever-se <i class="fas fa-user-plus"></i>
+                    </button>
+                    <button class="event-button secondary" id="modalEventShare">
+                        Compartilhar <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <section id="noticias" class="section news-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Últimas Notícias</h2>
+        <p class="section-description">Fique por dentro das novidades e atualizações do mundo acadêmico</p>
+      </div>
+
+      <div class="news-filters">
+        <div class="news-search">
+          <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="newsSearch" placeholder="Buscar notícias..." class="search-input">
+          </div>
+        </div>
+        <div class="news-categories">
+          <button class="news-category active" data-category="all">Todas</button>
+          <button class="news-category" data-category="tecnologia">Tecnologia</button>
+          <button class="news-category" data-category="educacao">Educação</button>
+          <button class="news-category" data-category="pesquisa">Pesquisa</button>
+        </div>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <article class="news-card" data-aos="fade-up">
+          <div class="news-image">
+            <img src="https://source.unsplash.com/random/800x600?education" alt="Novas Tecnologias na Educação">
+            <div class="news-category-tag">Educação</div>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar"></i> 15 Março 2024</span>
+              <span class="news-read-time"><i class="fas fa-clock"></i> 5 min de leitura</span>
+            </div>
+            <h3 class="news-title">Novas Tecnologias na Educação</h3>
+            <p class="news-excerpt">Descubra as tendências tecnológicas que estão transformando o ensino superior e revolucionando a forma como aprendemos.</p>
+            <div class="news-tags">
+              <span class="news-tag">Tecnologia</span>
+              <span class="news-tag">Educação</span>
+              <span class="news-tag">Inovação</span>
+            </div>
+            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="news-image">
+            <img src="https://source.unsplash.com/random/800x600?research" alt="Importância da Pesquisa Acadêmica">
+            <div class="news-category-tag">Pesquisa</div>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar"></i> 10 Março 2024</span>
+              <span class="news-read-time"><i class="fas fa-clock"></i> 7 min de leitura</span>
+            </div>
+            <h3 class="news-title">Importância da Pesquisa Acadêmica</h3>
+            <p class="news-excerpt">Como a pesquisa acadêmica está impactando o desenvolvimento social e tecnológico, e por que ela é fundamental para o progresso.</p>
+            <div class="news-tags">
+              <span class="news-tag">Pesquisa</span>
+              <span class="news-tag">Ciência</span>
+              <span class="news-tag">Desenvolvimento</span>
+            </div>
+            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="news-image">
+            <img src="https://source.unsplash.com/random/800x600?event" alt="Eventos Híbridos">
+            <div class="news-category-tag">Tecnologia</div>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar"></i> 5 Março 2024</span>
+              <span class="news-read-time"><i class="fas fa-clock"></i> 4 min de leitura</span>
+            </div>
+            <h3 class="news-title">Eventos Híbridos: O Futuro</h3>
+            <p class="news-excerpt">A combinação de eventos presenciais e virtuais está revolucionando o cenário acadêmico e criando novas oportunidades de conexão.</p>
+            <div class="news-tags">
+              <span class="news-tag">Eventos</span>
+              <span class="news-tag">Híbrido</span>
+              <span class="news-tag">Inovação</span>
+            </div>
+            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="news-load-more">
+        <button id="loadMoreNews" class="load-more-button">
+          <span>Carregar Mais Notícias</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscricao" class="section subscription-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Inscreva-se</h2>
+        <p class="section-description">Faça parte da nossa comunidade acadêmica e tenha acesso a eventos exclusivos</p>
+      </div>
+
+      <div class="subscription-container">
+        <div class="subscription-form-wrapper">
+          <form id="formInscricao" class="subscription-form">
+            <div class="form-header">
+              <div class="form-icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <h3>Complete seu Cadastro</h3>
+              <p>Preencha os dados abaixo para se inscrever</p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">
+                  <i class="fas fa-user"></i>
+                  Nome completo
+                </label>
+                <input type="text" id="nome" name="nome" required 
+                       placeholder="Digite seu nome completo"
+                       class="form-control" />
+                <div class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  <i class="fas fa-envelope"></i>
+                  Email
+                </label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="seu@email.com"
+                       class="form-control" />
+                <div class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">
+                  <i class="fas fa-phone"></i>
+                  Telefone
+                </label>
+                <input type="tel" id="telefone" name="telefone" 
+                       placeholder="(00) 00000-0000"
+                       class="form-control" />
+                <div class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="instituicao">
+                  <i class="fas fa-university"></i>
+                  Instituição
+                </label>
+                <input type="text" id="instituicao" name="instituicao" 
+                       placeholder="Nome da sua instituição"
+                       class="form-control" />
+                <div class="form-error"></div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="areas">
+                  <i class="fas fa-graduation-cap"></i>
+                  Áreas de Interesse
+                </label>
+                <select id="areas" name="areas" multiple class="form-control form-select">
+                  <option value="tecnologia">Tecnologia</option>
+                  <option value="educacao">Educação</option>
+                  <option value="pesquisa">Pesquisa</option>
+                  <option value="inovacao">Inovação</option>
+                  <option value="desenvolvimento">Desenvolvimento</option>
+      </select>
+                <div class="form-hint">Pressione Ctrl para selecionar múltiplas opções</div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="mensagem">
+                  <i class="fas fa-comment"></i>
+                  Mensagem (opcional)
+                </label>
+                <textarea id="mensagem" name="mensagem" 
+                          placeholder="Digite sua mensagem ou observações"
+                          class="form-control form-textarea"></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <div class="form-checkbox">
+                  <input type="checkbox" id="termos" name="termos" required />
+                  <label for="termos">
+                    Li e concordo com os <a href="#" class="link">Termos de Uso</a> e 
+                    <a href="#" class="link">Política de Privacidade</a>
+                  </label>
+                </div>
+                <div class="form-error"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <span>Completar Inscrição</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+    </form>
+        </div>
+
+        <div class="subscription-benefits">
+          <div class="benefits-header">
+            <i class="fas fa-star"></i>
+            <h3>Benefícios da Inscrição</h3>
+          </div>
+          <ul class="benefits-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div class="benefit-content">
+                <h4>Acesso a Todos os Eventos</h4>
+                <p>Participe de workshops, palestras e congressos exclusivos</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div class="benefit-content">
+                <h4>Certificados Digitais</h4>
+                <p>Receba certificados reconhecidos automaticamente</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div class="benefit-content">
+                <h4>Material Exclusivo</h4>
+                <p>Acesso a conteúdo e materiais preparados especialmente</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div class="benefit-content">
+                <h4>Networking</h4>
+                <p>Conecte-se com profissionais e pesquisadores da área</p>
+              </div>
+            </li>
+          </ul>
+          <div class="benefits-footer">
+            <p><i class="fas fa-shield-alt"></i> Seus dados estão seguros conosco</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificados" class="section certificates-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Certificados</h2>
+        <p class="section-description">Acesse e gerencie seus certificados de participação em eventos</p>
+      </div>
+
+      <div class="certificates-container">
+        <div class="certificates-search">
+          <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="email" id="emailCertificado" class="search-input" 
+                   placeholder="Digite seu email para buscar certificados" />
+          </div>
+          <button onclick="buscarCertificados()" class="search-button">
+            <i class="fas fa-search"></i> Buscar
+          </button>
+        </div>
+
+        <div class="certificates-info">
+          <div class="info-card">
+            <i class="fas fa-info-circle"></i>
+            <div class="info-content">
+              <h4>Informações Importantes</h4>
+              <ul>
+                <li>Seus certificados estarão disponíveis em até 48h após o evento</li>
+                <li>Você pode baixar os certificados em formato PDF</li>
+                <li>Os certificados são verificáveis através de um código único</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="certificates-filters">
+          <button class="certificate-filter active" data-filter="all">
+            <i class="fas fa-certificate"></i> Todos
+          </button>
+          <button class="certificate-filter" data-filter="recent">
+            <i class="fas fa-clock"></i> Recentes
+          </button>
+          <button class="certificate-filter" data-filter="pending">
+            <i class="fas fa-hourglass-half"></i> Pendentes
+          </button>
+          <button class="certificate-filter" data-filter="downloaded">
+            <i class="fas fa-download"></i> Baixados
+          </button>
+        </div>
+
+        <div id="listaCertificados" class="certificates-grid">
+          <!-- Certificados serão carregados dinamicamente via JavaScript -->
+        </div>
+
+        <div class="certificates-empty" style="display: none;">
+          <div class="empty-state">
+            <i class="fas fa-certificate"></i>
+            <h3>Nenhum certificado encontrado</h3>
+            <p>Faça uma busca usando seu email para encontrar seus certificados</p>
+          </div>
+        </div>
+
+        <div class="certificates-load-more">
+          <button id="loadMoreCertificates" class="load-more-button">
+            <span>Carregar Mais Certificados</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendario" class="section">
+    <h3><i class="fas fa-calendar-day"></i> Calendário Acadêmico</h3>
+    <div class="calendar-container">
+      <iframe src="https://calendar.google.com/calendar/embed?src=pt.mz%23holiday%40group.v.calendar.google.com&ctz=Africa%2FMaputo" 
+              style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <section id="universidades" class="section universities-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Universidades em Moçambique</h2>
+        <p class="section-description">Conheça as principais instituições de ensino superior do país</p>
+      </div>
+      <div class="universities-grid">
+        <div class="university-card">
+          <h3>Universidade Eduardo Mondlane (UEM)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Maputo</p>
+          <a href="https://www.uem.mz/" target="_blank" class="university-link">Site Oficial</a>
+        </div>
+        <div class="university-card">
+          <h3>Universidade Pedagógica (UP)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Maputo, Beira, Nampula</p>
+          <a href="https://www.up.ac.mz/" target="_blank" class="university-link">Site Oficial</a>
+        </div>
+        <div class="university-card">
+          <h3>Universidade Lúrio (UniLúrio)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Nampula</p>
+          <a href="https://www.unilurio.ac.mz/" target="_blank" class="university-link">Site Oficial</a>
+        </div>
+        <div class="university-card">
+          <h3>Universidade Zambeze (UniZambeze)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Beira, Tete</p>
+          <a href="https://www.unizambeze.ac.mz/" target="_blank" class="university-link">Site Oficial</a>
+        </div>
+        <div class="university-card">
+          <h3>Universidade Católica de Moçambique (UCM)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Beira, Nampula, Pemba, Tete, Chimoio, Quelimane, Xai-Xai</p>
+          <a href="https://www.ucm.ac.mz/" target="_blank" class="university-link">Site Oficial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Sobre Nós</h4>
+        <p>Plataforma líder em eventos acadêmicos, conectando estudantes, pesquisadores e instituições.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#certificados">Certificados</a></li>
+          <li><a href="#calendario">Calendário</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p><i class="fas fa-envelope"></i> deckvickey@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +258 867206476</p>
+        <p><i class="fas fa-phone"></i> 87677045</p>
+        <p><i class="fas fa-users"></i> Estudantes do ISPT</p>
+        <p><i class="fas fa-map-marker-alt"></i> Nossa localização: Tete</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+    <p>&copy; 2025 Plataforma de Eventos Acadêmicos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/dataManager.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/certificates.js"></script>
+  <script src="js/registrations.js"></script>
+  <script src="js/notifications.js"></script>
+  <div class="toast-container"></div>
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>

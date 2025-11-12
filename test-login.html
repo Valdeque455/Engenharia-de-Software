@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .credentials {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .danger {
+            background: #f44336;
+        }
+        .danger:hover {
+            background: #da190b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Ferramenta de Teste - Login</h1>
+    
+    <div class="info-box">
+        <h2>Credenciais Padrão</h2>
+        <div class="credentials">
+            <strong>Email:</strong> admin@admin.com<br>
+            <strong>Senha:</strong> admin123<br>
+            <strong>Papel:</strong> Administrador
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h2>Ações</h2>
+        <button onclick="checkDataManager()">Verificar DataManager</button>
+        <button onclick="checkUsers()">Verificar Usuários</button>
+        <button onclick="createAdmin()">Criar/Recriar Admin</button>
+        <button onclick="clearStorage()" class="danger">Limpar Dados (CUIDADO!)</button>
+        <button onclick="testLogin()">Testar Login</button>
+    </div>
+
+    <div id="results" style="margin-top: 20px; padding: 15px; background: #f5f5f5; border-radius: 5px; display: none;">
+        <h3>Resultados:</h3>
+        <pre id="output"></pre>
+    </div>
+
+    <script src="js/dataManager.js"></script>
+    <script>
+        function showResults(data) {
+            const results = document.getElementById('results');
+            const output = document.getElementById('output');
+            output.textContent = JSON.stringify(data, null, 2);
+            results.style.display = 'block';
+        }
+
+        function checkDataManager() {
+            if (typeof dataManager === 'undefined') {
+                showResults({ error: 'DataManager não está carregado!' });
+            } else {
+                showResults({ 
+                    status: 'OK', 
+                    message: 'DataManager está carregado',
+                    hasUsers: !!localStorage.getItem('users')
+                });
+            }
+        }
+
+        function checkUsers() {
+            if (typeof dataManager === 'undefined') {
+                showResults({ error: 'DataManager não está carregado!' });
+                return;
+            }
+            
+            const users = dataManager.getUsers();
+            showResults({
+                totalUsers: users.length,
+                users: users.map(u => ({
+                    email: u.email,
+                    name: u.name,
+                    role: u.role,
+                    isActive: u.isActive
+                }))
+            });
+        }
+
+        function createAdmin() {
+            if (typeof dataManager === 'undefined') {
+                showResults({ error: 'DataManager não está carregado!' });
+                return;
+            }
+
+            let users = dataManager.getUsers();
+            
+            // Remover admin existente se houver
+            users = users.filter(u => u.email !== 'admin@admin.com');
+            
+            // Criar novo admin
+            const adminUser = {
+                id: 'admin-001',
+                name: 'Administrador',
+                email: 'admin@admin.com',
+                phone: '(00) 00000-0000',
+                password: 'admin123',
+                role: 'admin',
+                institution: 'Sistema',
+                createdAt: new Date().toISOString(),
+                isActive: true
+            };
+            
+            users.push(adminUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            showResults({
+                status: 'Sucesso',
+                message: 'Usuário admin criado/atualizado',
+                admin: {
+                    email: adminUser.email,
+                    password: adminUser.password
+                }
+            });
+        }
+
+        function clearStorage() {
+            if (!confirm('Tem certeza que deseja limpar TODOS os dados? Isso não pode ser desfeito!')) {
+                return;
+            }
+            
+            localStorage.clear();
+            showResults({
+                status: 'Dados limpos',
+                message: 'Todos os dados foram removidos. Recarregue a página para recriar o admin.'
+            });
+        }
+
+        function testLogin() {
+            if (typeof dataManager === 'undefined') {
+                showResults({ error: 'DataManager não está carregado!' });
+                return;
+            }
+
+            try {
+                const user = dataManager.login('admin@admin.com', 'admin123');
+                showResults({
+                    status: 'Login OK',
+                    user: {
+                        name: user.name,
+                        email: user.email,
+                        role: user.role
+                    }
+                });
+            } catch (error) {
+                showResults({
+                    status: 'Erro no login',
+                    error: error.message
+                });
+            }
+        }
+
+        // Verificar ao carregar
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                checkDataManager();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+

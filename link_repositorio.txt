@@ -1,0 +1,3 @@
+git_repositorio:https://github.com/Valdeque/Platorforma-De-Eventos-Academicos
+link_pagina:https://valdeque.github.io/Platorforma-De-Eventos-Academicos/
+Directorio do Projecto:C:\Users\HP CORE  I5\Desktop\Plataforma de Eventos Academicos\Projecto_ProgramacaoWeb

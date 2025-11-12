@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Portal de Eventos</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <a href="login.html" class="auth-back">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao login
+        </a>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h1 class="auth-title">Recuperar Senha</h1>
+                <p class="auth-subtitle">Digite seu e-mail para receber as instruções</p>
+            </div>
+
+            <form class="auth-form" id="recoverForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    Enviar Instruções <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Lembrou sua senha? <a href="login.html">Voltar ao login</a></p>
+            </div>
+        </div>
+
+        <!-- Template para mensagem de sucesso (inicialmente oculto) -->
+        <div class="auth-card auth-success" style="display: none;">
+            <div class="auth-success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="auth-success-title">E-mail Enviado!</h2>
+            <p class="auth-success-message">
+                Enviamos as instruções para recuperar sua senha para o e-mail informado.
+                Por favor, verifique sua caixa de entrada.
+            </p>
+            <button class="form-submit" onclick="window.location.href='login.html'">
+                Voltar ao Login <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/dataManager.js"></script>
+    <script src="js/auth.js"></script>
+    <div class="toast-container"></div>
+</body>
+</html> 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal de Eventos</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+        </button>
+        <a href="index.html" class="auth-back">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao início
+        </a>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h1 class="auth-title">Bem-vindo de volta!</h1>
+                <p class="auth-subtitle">Entre com sua conta para continuar</p>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Senha</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" class="form-control" placeholder="Digite sua senha" required>
+                        <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Lembrar de mim</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    Entrar <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </form>
+
+            <div class="auth-divider">
+                <span>ou continue com</span>
+            </div>
+
+            <div class="auth-social">
+                <button class="auth-social-button">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="auth-social-button">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                <p><a href="recuperar-senha.html">Esqueceu sua senha?</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dataManager.js"></script>
+    <script src="js/auth.js"></script>
+    <div class="toast-container"></div>
+</body>
+</html> 

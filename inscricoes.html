@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Inscrições - Plataforma de Eventos Acadêmicos</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1><i class="fas fa-graduation-cap"></i> Plataforma de Eventos Acadêmicos</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="inscricoes.html"><i class="fas fa-ticket-alt"></i> Minhas Inscrições</a></li>
+                <li class="auth-links"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section" style="margin-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Minhas Inscrições</h2>
+                <p class="section-description">Gerencie suas inscrições em eventos</p>
+            </div>
+
+            <div id="myRegistrationsContainer">
+                <!-- Inscrições serão carregadas dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <script src="js/dataManager.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/registrations.js"></script>
+    <div class="toast-container"></div>
+</body>
+</html>
+
